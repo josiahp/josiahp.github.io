@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+<title>2020 08 19</title>
+
+
+  
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" type="application/rss+xml" href="https://josiahp.github.io/index.xml" title="devlog">
+
+<link id="dark-mode-theme" rel="stylesheet" href="https://josiahp.github.io/css/dark.css" />
+<link rel="stylesheet" href="https://josiahp.github.io/fontawesome/css/all.min.css" />
+
+<script src="https://josiahp.github.io/js/bundle.js"></script>
+<script src="https://josiahp.github.io/js/instantpage.js" type="module" defer></script>
+<meta name="generator" content="Hugo 0.73.0" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+
+    <ul class="nav-links">
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="post-heading">
+          
+            <h1>2020 08 19</h1>
+          
+          
+            <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>&nbsp;Aug 19, 2020
+  
+</span>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+    <p>Today I modeled a very simple monster (with horrible topology).</p>
+<p><img src="/2020-08-19-monster.png" alt="Monster"></p>
+<p>He is built from a cube with the multires modifier subdivided 7 times. I sculpted then baked the normals to a 2k map which got placed over the 20kish poly version.
+The quality is pretty low likely due to the poor UV unwrap.</p>
+<p>Once modeled, I made a very simple rig and rigged him up. The movement is pretty terrible because his body shape is so weird, so I&rsquo;ll need to spend some time weight painting if I want it to look good.
+Note to self, always remember to calculate the bone roll agains the global Z axis.</p>
+<p>I started making a walk cycle but ran out of time tonight so I&rsquo;ll finish it tomorrow.</p>
+<p>The only other advancement was that I made it so you could equip/unequip your weapon in UE4 (Block project), and that you can only attack if your weapon is out.</p>
+<p>Once the model above is walking I&rsquo;ll put him into the engine with some simple AI and made him spawnable and killable.</p>
+
+
+
+      
+    </article>
+    
+    
+  </div>
+
+    <footer>
+  <div class="container">
+    <p class="credits copyright">
+      <a href="https://josiahp.github.io/about"></a>
+      &nbsp;&copy;
+      2020
+
+      
+        &nbsp;/&nbsp;
+        <a href="https://josiahp.github.io/">devlog</a>
+      
+
+      &nbsp;&ndash;&nbsp;
+      <i class="fas fa-moon" id="dark-mode-toggle"></i>
+
+      <p class="credits theme-by">
+        Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;Theme <a href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+      </p>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>
