@@ -12,13 +12,19 @@
 		<atom:link href="/categories/" rel="self" type="application/rss+xml" />
 		
 		<item>
-			<title>2020 08 19</title>
+			<title>Animation and Blueprinting</title>
+			<link>https://josiahp.github.io/post/2020-08-20/</link>
+			<pubDate>Fri, 21 Aug 2020 00:18:00 +0900</pubDate>
+			<guid>https://josiahp.github.io/post/2020-08-20/</guid>
+			<description>Today I animated the simple monster (with horrible weight painting).</description>
+		</item>
+      	
+		<item>
+			<title>Simple Monster Mockup</title>
 			<link>https://josiahp.github.io/post/2020-08-19/</link>
 			<pubDate>Wed, 19 Aug 2020 23:50:59 +0900</pubDate>
 			<guid>https://josiahp.github.io/post/2020-08-19/</guid>
-			<description>Today I modeled a very simple monster (with horrible topology).
-He is built from a cube with the multires modifier subdivided 7 times. I sculpted then baked the normals to a 2k map which got placed over the 20kish poly version. The quality is pretty low likely due to the poor UV unwrap.
-Once modeled, I made a very simple rig and rigged him up. The movement is pretty terrible because his body shape is so weird, so I&amp;rsquo;ll need to spend some time weight painting if I want it to look good.</description>
+			<description>Today I modeled a very simple monster (with horrible topology).</description>
 		</item>
       	
 	</channel>

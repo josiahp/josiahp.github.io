@@ -1,17 +1,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>Posts on devlog</title>
-		<link>https://josiahp.github.io/post/</link>
-		<description>Recent content in Posts </description>
+		<title>blueprint on devlog</title>
+		<link>https://josiahp.github.io/tags/blueprint/</link>
+		<description>Recent content in blueprint </description>
 		<generator>Hugo -- gohugo.io</generator>
 		
   		<language>en-us</language>
 		
-		<managingEditor>Page(/post)</managingEditor>
+		<managingEditor>Page(/tags/blueprint)</managingEditor>
     	
   		<lastBuildDate>Fri, 21 Aug 2020 00:18:00 +0900</lastBuildDate>
 		
-		<atom:link href="/post/" rel="self" type="application/rss+xml" />
+		<atom:link href="/tags/blueprint/" rel="self" type="application/rss+xml" />
 		
 		<item>
 			<title>Animation and Blueprinting</title>

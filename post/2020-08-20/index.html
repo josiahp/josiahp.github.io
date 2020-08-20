@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+<title>Animation and Blueprinting</title>
+
+
+  
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" type="application/rss+xml" href="https://josiahp.github.io/index.xml" title="devlog">
+
+<link id="dark-mode-theme" rel="stylesheet" href="https://josiahp.github.io/css/dark.css" />
+<link rel="stylesheet" href="https://josiahp.github.io/fontawesome/css/all.min.css" />
+
+<script src="https://josiahp.github.io/js/bundle.js"></script>
+<script src="https://josiahp.github.io/js/instantpage.js" type="module" defer></script>
+<meta name="generator" content="Hugo 0.74.3" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+
+    <ul class="nav-links">
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="post-heading">
+          
+            <h1>Animation and Blueprinting</h1>
+          
+          
+            <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>&nbsp;Aug 21, 2020
+  
+</span>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+    <p>Summary of accomplishment:</p>
+<ul>
+<li>Animate the monster (and tweak the rig/weight painting)</li>
+<li>Import the monster into UE4</li>
+<li>Make the monster chase the player</li>
+</ul>
+<p>I spent an hour or so animating the monster I made yesterday and importing it into UE4.
+There was nothing specifically difficult about the animating, except that the rig is very poor and the weight painting is even worse, so the mesh does not deform well. I&rsquo;m not too worried about it for now as I can make a real monster later.</p>
+<p>I struggled a lot with the UE4 import as upon importing the animations were far too small. In the end, I set the Blender world scale to 0.1 and upon importing to UE4 I set the monster scale up by 50. This is not the correct way, as I should not have to modify the scale in UE4.</p>
+<p>The monster chases the player after a short delay (in order to capture the video). The chase is driven by a Simple Move to Actor on the Monster blueprint. I had to add a Navmesh before the monster AI would move at all.</p>
+<video width="640" height="360" controls>
+  <source src="/2020-08-20-monster-chase.mp4" type="video/mp4">
+</video>
+
+
+      
+        <div class="blog-tags">
+          
+            <a href="https://josiahp.github.io//tags/rigging/">rigging</a>&nbsp;
+          
+            <a href="https://josiahp.github.io//tags/weight-painting/">weight painting</a>&nbsp;
+          
+            <a href="https://josiahp.github.io//tags/blender/">blender</a>&nbsp;
+          
+            <a href="https://josiahp.github.io//tags/unreal/">unreal</a>&nbsp;
+          
+            <a href="https://josiahp.github.io//tags/ue4/">ue4</a>&nbsp;
+          
+            <a href="https://josiahp.github.io//tags/animation/">animation</a>&nbsp;
+          
+            <a href="https://josiahp.github.io//tags/blueprint/">blueprint</a>&nbsp;
+          
+        </div>
+      
+    </article>
+    
+    
+  </div>
+
+    <footer>
+  <div class="container">
+    <p class="credits copyright">
+      <a href="https://josiahp.github.io/about"></a>
+      &nbsp;&copy;
+      2020
+
+      
+        &nbsp;/&nbsp;
+        <a href="https://josiahp.github.io/">devlog</a>
+      
+
+      &nbsp;&ndash;&nbsp;
+      <i class="fas fa-moon" id="dark-mode-toggle"></i>
+
+      <p class="credits theme-by">
+        Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;Theme <a href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+      </p>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>
