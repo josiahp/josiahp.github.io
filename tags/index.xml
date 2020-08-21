@@ -1,33 +1,115 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>Tags on devlog</title>
-		<link>https://josiahp.github.io/tags/</link>
-		<description>Recent content in Tags </description>
-		<generator>Hugo -- gohugo.io</generator>
-		
-  		<language>en-us</language>
-		
-		<managingEditor>Page(/tags)</managingEditor>
-    	
-  		<lastBuildDate>Fri, 21 Aug 2020 00:18:00 +0900</lastBuildDate>
-		
-		<atom:link href="/tags/" rel="self" type="application/rss+xml" />
-		
-		<item>
-			<title>Animation and Blueprinting</title>
-			<link>https://josiahp.github.io/post/2020-08-20/</link>
-			<pubDate>Fri, 21 Aug 2020 00:18:00 +0900</pubDate>
-			<guid>https://josiahp.github.io/post/2020-08-20/</guid>
-			<description>Today I animated the simple monster (with horrible weight painting).</description>
-		</item>
-      	
-		<item>
-			<title>Simple Monster Mockup</title>
-			<link>https://josiahp.github.io/post/2020-08-19/</link>
-			<pubDate>Wed, 19 Aug 2020 23:50:59 +0900</pubDate>
-			<guid>https://josiahp.github.io/post/2020-08-19/</guid>
-			<description>Today I modeled a very simple monster (with horrible topology).</description>
-		</item>
-      	
-	</channel>
+  <channel>
+    <title>Tags on devlog</title>
+    <link>localhost:1313/tags/</link>
+    <description>Recent content in Tags on devlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2020 Josiah Purtlebaugh</copyright>
+    <lastBuildDate>Fri, 21 Aug 2020 23:50:14 +0900</lastBuildDate>
+    
+	<atom:link href="localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>collision</title>
+      <link>localhost:1313/tags/collision/</link>
+      <pubDate>Fri, 21 Aug 2020 23:50:14 +0900</pubDate>
+      
+      <guid>localhost:1313/tags/collision/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>timeline</title>
+      <link>localhost:1313/tags/timeline/</link>
+      <pubDate>Fri, 21 Aug 2020 23:50:14 +0900</pubDate>
+      
+      <guid>localhost:1313/tags/timeline/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ui</title>
+      <link>localhost:1313/tags/ui/</link>
+      <pubDate>Fri, 21 Aug 2020 23:50:14 +0900</pubDate>
+      
+      <guid>localhost:1313/tags/ui/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>widget</title>
+      <link>localhost:1313/tags/widget/</link>
+      <pubDate>Fri, 21 Aug 2020 23:50:14 +0900</pubDate>
+      
+      <guid>localhost:1313/tags/widget/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>animation</title>
+      <link>localhost:1313/tags/animation/</link>
+      <pubDate>Fri, 21 Aug 2020 00:18:00 +0900</pubDate>
+      
+      <guid>localhost:1313/tags/animation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>blender</title>
+      <link>localhost:1313/tags/blender/</link>
+      <pubDate>Fri, 21 Aug 2020 00:18:00 +0900</pubDate>
+      
+      <guid>localhost:1313/tags/blender/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>blueprint</title>
+      <link>localhost:1313/tags/blueprint/</link>
+      <pubDate>Fri, 21 Aug 2020 00:18:00 +0900</pubDate>
+      
+      <guid>localhost:1313/tags/blueprint/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rigging</title>
+      <link>localhost:1313/tags/rigging/</link>
+      <pubDate>Fri, 21 Aug 2020 00:18:00 +0900</pubDate>
+      
+      <guid>localhost:1313/tags/rigging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ue4</title>
+      <link>localhost:1313/tags/ue4/</link>
+      <pubDate>Fri, 21 Aug 2020 00:18:00 +0900</pubDate>
+      
+      <guid>localhost:1313/tags/ue4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>unreal</title>
+      <link>localhost:1313/tags/unreal/</link>
+      <pubDate>Fri, 21 Aug 2020 00:18:00 +0900</pubDate>
+      
+      <guid>localhost:1313/tags/unreal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>weight painting</title>
+      <link>localhost:1313/tags/weight-painting/</link>
+      <pubDate>Fri, 21 Aug 2020 00:18:00 +0900</pubDate>
+      
+      <guid>localhost:1313/tags/weight-painting/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
 </rss>

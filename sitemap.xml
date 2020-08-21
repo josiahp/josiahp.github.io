@@ -3,67 +3,88 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://josiahp.github.io/tags/animation/</loc>
+    <loc>localhost:1313/tags/collision/</loc>
+    <lastmod>2020-08-21T23:50:14+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>localhost:1313/posts/2020-08-21/</loc>
+    <lastmod>2020-08-21T23:50:14+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>localhost:1313/</loc>
+    <lastmod>2020-08-21T23:50:14+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>localhost:1313/posts/</loc>
+    <lastmod>2020-08-21T23:50:14+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>localhost:1313/tags/</loc>
+    <lastmod>2020-08-21T23:50:14+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>localhost:1313/tags/timeline/</loc>
+    <lastmod>2020-08-21T23:50:14+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>localhost:1313/tags/ui/</loc>
+    <lastmod>2020-08-21T23:50:14+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>localhost:1313/tags/widget/</loc>
+    <lastmod>2020-08-21T23:50:14+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>localhost:1313/tags/animation/</loc>
     <lastmod>2020-08-21T00:18:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://josiahp.github.io/post/2020-08-20/</loc>
+    <loc>localhost:1313/posts/2020-08-20/</loc>
     <lastmod>2020-08-21T00:18:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://josiahp.github.io/tags/blender/</loc>
+    <loc>localhost:1313/tags/blender/</loc>
     <lastmod>2020-08-21T00:18:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://josiahp.github.io/tags/blueprint/</loc>
+    <loc>localhost:1313/tags/blueprint/</loc>
     <lastmod>2020-08-21T00:18:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://josiahp.github.io/</loc>
+    <loc>localhost:1313/tags/rigging/</loc>
     <lastmod>2020-08-21T00:18:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://josiahp.github.io/post/</loc>
+    <loc>localhost:1313/tags/ue4/</loc>
     <lastmod>2020-08-21T00:18:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://josiahp.github.io/tags/rigging/</loc>
+    <loc>localhost:1313/tags/unreal/</loc>
     <lastmod>2020-08-21T00:18:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://josiahp.github.io/tags/</loc>
+    <loc>localhost:1313/tags/weight-painting/</loc>
     <lastmod>2020-08-21T00:18:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://josiahp.github.io/tags/ue4/</loc>
-    <lastmod>2020-08-21T00:18:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://josiahp.github.io/tags/unreal/</loc>
-    <lastmod>2020-08-21T00:18:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://josiahp.github.io/tags/weight-painting/</loc>
-    <lastmod>2020-08-21T00:18:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://josiahp.github.io/post/2020-08-19/</loc>
+    <loc>localhost:1313/posts/2020-08-19/</loc>
     <lastmod>2020-08-19T23:50:59+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://josiahp.github.io/categories/</loc>
   </url>
   
 </urlset>
