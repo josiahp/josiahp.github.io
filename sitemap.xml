@@ -3,27 +3,52 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://josiahp.github.io/tags/blender/</loc>
+    <lastmod>2020-08-22T23:05:58+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://josiahp.github.io/</loc>
+    <lastmod>2020-08-22T23:05:58+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://josiahp.github.io/tags/physics/</loc>
+    <lastmod>2020-08-22T23:05:58+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://josiahp.github.io/posts/</loc>
+    <lastmod>2020-08-22T23:05:58+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://josiahp.github.io/posts/2020-08-22/</loc>
+    <lastmod>2020-08-22T23:05:58+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://josiahp.github.io/tags/</loc>
+    <lastmod>2020-08-22T23:05:58+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://josiahp.github.io/tags/ue4/</loc>
+    <lastmod>2020-08-22T23:05:58+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://josiahp.github.io/tags/unreal/</loc>
+    <lastmod>2020-08-22T23:05:58+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://josiahp.github.io/tags/collision/</loc>
     <lastmod>2020-08-21T23:50:14+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://josiahp.github.io/posts/2020-08-21/</loc>
-    <lastmod>2020-08-21T23:50:14+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://josiahp.github.io/</loc>
-    <lastmod>2020-08-21T23:50:14+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://josiahp.github.io/posts/</loc>
-    <lastmod>2020-08-21T23:50:14+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://josiahp.github.io/tags/</loc>
     <lastmod>2020-08-21T23:50:14+09:00</lastmod>
   </url>
   
@@ -53,27 +78,12 @@
   </url>
   
   <url>
-    <loc>https://josiahp.github.io/tags/blender/</loc>
-    <lastmod>2020-08-21T00:18:00+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://josiahp.github.io/tags/blueprint/</loc>
     <lastmod>2020-08-21T00:18:00+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://josiahp.github.io/tags/rigging/</loc>
-    <lastmod>2020-08-21T00:18:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://josiahp.github.io/tags/ue4/</loc>
-    <lastmod>2020-08-21T00:18:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://josiahp.github.io/tags/unreal/</loc>
     <lastmod>2020-08-21T00:18:00+09:00</lastmod>
   </url>
   

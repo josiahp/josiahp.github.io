@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Josiah Purtlebaugh</copyright>
-    <lastBuildDate>Fri, 21 Aug 2020 23:50:14 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 22 Aug 2020 23:05:58 +0900</lastBuildDate>
     
 	<atom:link href="https://josiahp.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ragdoll Physics and a Door</title>
+      <link>https://josiahp.github.io/posts/2020-08-22/</link>
+      <pubDate>Sat, 22 Aug 2020 23:05:58 +0900</pubDate>
+      
+      <guid>https://josiahp.github.io/posts/2020-08-22/</guid>
+      <description>Struggling with ragdoll physics and adding a simple door</description>
+    </item>
     
     <item>
       <title>Collision and Timeline Events</title>
