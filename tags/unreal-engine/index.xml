@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>blueprint on devlog</title>
-    <link>https://josiahp.github.io/tags/blueprint/</link>
-    <description>Recent content in blueprint on devlog</description>
+    <title>unreal engine on devlog</title>
+    <link>https://josiahp.github.io/tags/unreal-engine/</link>
+    <description>Recent content in unreal engine on devlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Josiah Purtlebaugh</copyright>
     <lastBuildDate>Mon, 24 Aug 2020 23:43:49 +0900</lastBuildDate>
     
-	<atom:link href="https://josiahp.github.io/tags/blueprint/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://josiahp.github.io/tags/unreal-engine/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,15 +19,6 @@
       
       <guid>https://josiahp.github.io/posts/2020-08-24/</guid>
       <description>A brief introduction to a very simple Inventory implementation</description>
-    </item>
-    
-    <item>
-      <title>Animation and Blueprinting</title>
-      <link>https://josiahp.github.io/posts/2020-08-20/</link>
-      <pubDate>Fri, 21 Aug 2020 00:18:00 +0900</pubDate>
-      
-      <guid>https://josiahp.github.io/posts/2020-08-20/</guid>
-      <description>Today I animated the simple monster (with horrible weight painting).</description>
     </item>
     
   </channel>
