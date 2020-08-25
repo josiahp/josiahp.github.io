@@ -1,32 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>animation on devlog</title>
-    <link>https://josiahp.github.io/tags/animation/</link>
-    <description>Recent content in animation on devlog</description>
+    <title>animation on Josiah Purtlebaugh</title>
+    <link>https://josiahp.github.com/tags/animation/</link>
+    <description>Recent content in animation on Josiah Purtlebaugh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2020 Josiah Purtlebaugh</copyright>
     <lastBuildDate>Sun, 23 Aug 2020 23:34:21 +0900</lastBuildDate>
     
-	<atom:link href="https://josiahp.github.io/tags/animation/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://josiahp.github.com/tags/animation/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Animating the Door</title>
-      <link>https://josiahp.github.io/posts/2020-08-23/</link>
+      <link>https://josiahp.github.com/2020/08/animating-the-door/</link>
       <pubDate>Sun, 23 Aug 2020 23:34:21 +0900</pubDate>
       
-      <guid>https://josiahp.github.io/posts/2020-08-23/</guid>
+      <guid>https://josiahp.github.com/2020/08/animating-the-door/</guid>
       <description>Created a simple door animation</description>
     </item>
     
     <item>
       <title>Animation and Blueprinting</title>
-      <link>https://josiahp.github.io/posts/2020-08-20/</link>
+      <link>https://josiahp.github.com/2020/08/animation-and-blueprinting/</link>
       <pubDate>Fri, 21 Aug 2020 00:18:00 +0900</pubDate>
       
-      <guid>https://josiahp.github.io/posts/2020-08-20/</guid>
+      <guid>https://josiahp.github.com/2020/08/animation-and-blueprinting/</guid>
       <description>Today I animated the simple monster (with horrible weight painting).</description>
     </item>
     

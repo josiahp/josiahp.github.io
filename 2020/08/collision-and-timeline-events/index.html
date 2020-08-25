@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Josiah Purtlebaugh">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://josiahp.github.com//header.jpg">
+    <meta property="twitter:image" content="https://josiahp.github.com//header.jpg" />
+    
+
+    
+    <meta name="title" content="Collision and Timeline Events" />
+    <meta property="og:title" content="Collision and Timeline Events" />
+    <meta property="twitter:title" content="Collision and Timeline Events" />
+    
+
+    
+    <meta name="description" content="">
+    <meta property="og:description" content="" />
+    <meta property="twitter:description" content="" />
+    
+
+    
+    <meta property="twitter:card" content="Today I implemented simple weapon collision, health bar display, and enemy death" />
+    
+    
+
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Collision and Timeline Events-Josiah Purtlebaugh</title>
+
+    <link rel="canonical" href="/2020/08/collision-and-timeline-events/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+	
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+    
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+    
+    
+    <script src="/js/bootstrap.min.js"></script>
+    
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Josiah Purtlebaugh</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                    
+                    
+		    
+                        <li><a href="/"></a></li>
+                    
+                        <li><a href="/about/">ABOUT</a></li>
+                    
+
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/header.jpg')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/collision" title="collision">
+                            collision
+                        </a>
+                        
+                        <a class="tag" href="/tags/ui" title="ui">
+                            ui
+                        </a>
+                        
+                        <a class="tag" href="/tags/widget" title="widget">
+                            widget
+                        </a>
+                        
+                        <a class="tag" href="/tags/timeline" title="timeline">
+                            timeline
+                        </a>
+                        
+                    </div>
+                    <h1>Collision and Timeline Events</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                        Posted by
+                        
+                        Josiah Purtlebaugh
+                        
+                        
+                        
+                        on
+                        Friday, August 21, 2020
+                        
+                        
+                        
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>TOC</h2>
+                </header>
+                <nav id="TableOfContents"></nav>
+                
+                <p>Summary of accomplishment:</p>
+<ul>
+<li>Learned widget blueprints and how to modify their values</li>
+<li>Enabled collisions on weapons and enemies, and implemented collision events</li>
+<li>Added a brief color change upon damaging an enemy</li>
+<li>Added a health bar above the enemy&rsquo;s head that follows camera rotation</li>
+<li>Enabled ragdoll physics on enemy death</li>
+</ul>
+<p>I started off today by implementing a simple health bar. It took me a few hours to implement for one simple reason: after creating the widget blueprint I could not figure out how to set the widget values from the enemy blueprint.</p>
+<p>It seems like it should be obvious, but after adding the widget component to the enemy and dragging it into the event graph, I was not able to access any of the functions defined in the widget blueprint. What I didn&rsquo;t understand is that even if you set the widget class in the widget component of the enemy blueprint, you still need to cast the widget to the correct widget class in the event graph before you can call its member functions.</p>
+<p>
+  <img src="/2020-08-21-update-widget-values.png" alt="Update Widget Values from Actor Blueprint">
+
+</p>
+<p>Next, I tried to sort out how to do collisions. Collisions were happening by default, but upon swinging the weapon the enemy would fly off into space. Hmm. Simulate physics was disabled, so it was nothing to do with ragdoll physics. Ultimately the issue seemed to the on the distinction between the collision types. I changed the weapon from BlockAll to OverlapAll and suddenly collisions were firing without the wacky model behavior.</p>
+<p>Next, I went into the enemy blueprint and decided to make the color change upon collision. I did with the graph below.</p>
+<p>
+  <img src="/2020-08-21-collision.png" alt="React to Collisions">
+
+</p>
+<p>I am not sure how this will look once I start adding more conditional collisions, but hopefully it won&rsquo;t become too messy.</p>
+<p>Finally, I added enemy damage. This was as simple as lowering the currentHealth after each iteration of the timeline event (I really should do it before the timeline event). On each Tick I check the enemy health and if it is lower than or equal to zero, I delete the enemy actor. That was easy!</p>
+<p>
+  <img src="/2020-08-21-ragdoll-on-death.png" alt="Ragdoll on Death">
+
+</p>
+<video style="margin: 0 auto; display: block;" width="640" height="360" controls align="center">
+  <source src="/2020-08-21-monster-death.mp4" type="video/mp4">
+</video>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2020/08/animation-and-blueprinting/" data-toggle="tooltip" data-placement="top"
+                            title="Animation and Blueprinting">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2020/08/ragdoll-physics-and-a-door/" data-toggle="tooltip" data-placement="top"
+                            title="Ragdoll Physics and a Door">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        <a href="/tags/animation" title="animation">
+                            animation
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/blender" title="blender">
+                            blender
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/blueprint" title="blueprint">
+                            blueprint
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/ue4" title="ue4">
+                            ue4
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/unreal" title="unreal">
+                            unreal
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    <li>
+                        <a href='' rel="alternate"
+                            type="application/rss+xml" title="Josiah Purtlebaugh">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="mailto:josiah.purtlebaugh@gmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li>
+                        <a href="https://twitter.com/toraton">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+
+                    
+
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/josiahp">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/josiahpurtlebaugh/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Josiah Purtlebaugh 2020
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+        s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if ($('#tag_cloud').length !== 0) {
+        async("/js/jquery.tagcloud.js", function () {
+            $.fn.tagcloud.defaults = {
+                
+                color: { start: '#bbbbee', end: '#0085a1' },
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function () {
+        var $nav = document.querySelector("nav");
+        if ($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+</body>
+</html>

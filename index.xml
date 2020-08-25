@@ -1,68 +1,76 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>devlog</title>
-    <link>https://josiahp.github.io/</link>
-    <description>Recent content on devlog</description>
+    <title>Josiah Purtlebaugh</title>
+    <link>https://josiahp.github.com/</link>
+    <description>Recent content on Josiah Purtlebaugh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2020 Josiah Purtlebaugh</copyright>
     <lastBuildDate>Mon, 24 Aug 2020 23:43:49 +0900</lastBuildDate>
     
-	<atom:link href="https://josiahp.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://josiahp.github.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>About</title>
+      <link>https://josiahp.github.com/about/</link>
+      <pubDate>Tue, 25 Aug 2020 22:53:51 +0900</pubDate>
+      
+      <guid>https://josiahp.github.com/about/</guid>
+      <description>I&amp;rsquo;m an engineer, artist, husband, and father.</description>
+    </item>
+    
+    <item>
       <title>Creating a Simple Inventory System</title>
-      <link>https://josiahp.github.io/posts/2020-08-24/</link>
+      <link>https://josiahp.github.com/2020/08/creating-a-simple-inventory-system/</link>
       <pubDate>Mon, 24 Aug 2020 23:43:49 +0900</pubDate>
       
-      <guid>https://josiahp.github.io/posts/2020-08-24/</guid>
+      <guid>https://josiahp.github.com/2020/08/creating-a-simple-inventory-system/</guid>
       <description>A brief introduction to a very simple Inventory implementation</description>
     </item>
     
     <item>
       <title>Animating the Door</title>
-      <link>https://josiahp.github.io/posts/2020-08-23/</link>
+      <link>https://josiahp.github.com/2020/08/animating-the-door/</link>
       <pubDate>Sun, 23 Aug 2020 23:34:21 +0900</pubDate>
       
-      <guid>https://josiahp.github.io/posts/2020-08-23/</guid>
+      <guid>https://josiahp.github.com/2020/08/animating-the-door/</guid>
       <description>Created a simple door animation</description>
     </item>
     
     <item>
       <title>Ragdoll Physics and a Door</title>
-      <link>https://josiahp.github.io/posts/2020-08-22/</link>
+      <link>https://josiahp.github.com/2020/08/ragdoll-physics-and-a-door/</link>
       <pubDate>Sat, 22 Aug 2020 23:05:58 +0900</pubDate>
       
-      <guid>https://josiahp.github.io/posts/2020-08-22/</guid>
+      <guid>https://josiahp.github.com/2020/08/ragdoll-physics-and-a-door/</guid>
       <description>Struggling with ragdoll physics and adding a simple door</description>
     </item>
     
     <item>
       <title>Collision and Timeline Events</title>
-      <link>https://josiahp.github.io/posts/2020-08-21/</link>
+      <link>https://josiahp.github.com/2020/08/collision-and-timeline-events/</link>
       <pubDate>Fri, 21 Aug 2020 23:50:14 +0900</pubDate>
       
-      <guid>https://josiahp.github.io/posts/2020-08-21/</guid>
+      <guid>https://josiahp.github.com/2020/08/collision-and-timeline-events/</guid>
       <description>Today I implemented simple weapon collision, health bar display, and enemy death</description>
     </item>
     
     <item>
       <title>Animation and Blueprinting</title>
-      <link>https://josiahp.github.io/posts/2020-08-20/</link>
+      <link>https://josiahp.github.com/2020/08/animation-and-blueprinting/</link>
       <pubDate>Fri, 21 Aug 2020 00:18:00 +0900</pubDate>
       
-      <guid>https://josiahp.github.io/posts/2020-08-20/</guid>
+      <guid>https://josiahp.github.com/2020/08/animation-and-blueprinting/</guid>
       <description>Today I animated the simple monster (with horrible weight painting).</description>
     </item>
     
     <item>
       <title>Simple Monster Mockup</title>
-      <link>https://josiahp.github.io/posts/2020-08-19/</link>
+      <link>https://josiahp.github.com/2020/08/simple-monster-mockup/</link>
       <pubDate>Wed, 19 Aug 2020 23:50:59 +0900</pubDate>
       
-      <guid>https://josiahp.github.io/posts/2020-08-19/</guid>
+      <guid>https://josiahp.github.com/2020/08/simple-monster-mockup/</guid>
       <description>Today I modeled a very simple monster (with horrible topology).</description>
     </item>
     

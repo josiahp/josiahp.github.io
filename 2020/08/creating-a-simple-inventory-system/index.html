@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Josiah Purtlebaugh">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://josiahp.github.com//header.jpg">
+    <meta property="twitter:image" content="https://josiahp.github.com//header.jpg" />
+    
+
+    
+    <meta name="title" content="Creating a Simple Inventory System" />
+    <meta property="og:title" content="Creating a Simple Inventory System" />
+    <meta property="twitter:title" content="Creating a Simple Inventory System" />
+    
+
+    
+    <meta name="description" content="">
+    <meta property="og:description" content="" />
+    <meta property="twitter:description" content="" />
+    
+
+    
+    <meta property="twitter:card" content="A brief introduction to a very simple Inventory implementation" />
+    
+    
+
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Creating a Simple Inventory System-Josiah Purtlebaugh</title>
+
+    <link rel="canonical" href="/2020/08/creating-a-simple-inventory-system/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+	
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+    
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+    
+    
+    <script src="/js/bootstrap.min.js"></script>
+    
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Josiah Purtlebaugh</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                    
+                    
+		    
+                        <li><a href="/"></a></li>
+                    
+                        <li><a href="/about/">ABOUT</a></li>
+                    
+
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/header.jpg')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/ue4" title="ue4">
+                            ue4
+                        </a>
+                        
+                        <a class="tag" href="/tags/unreal-engine" title="unreal engine">
+                            unreal engine
+                        </a>
+                        
+                        <a class="tag" href="/tags/inventory" title="inventory">
+                            inventory
+                        </a>
+                        
+                        <a class="tag" href="/tags/blueprint" title="blueprint">
+                            blueprint
+                        </a>
+                        
+                        <a class="tag" href="/tags/tutorial" title="tutorial">
+                            tutorial
+                        </a>
+                        
+                    </div>
+                    <h1>Creating a Simple Inventory System</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                        Posted by
+                        
+                        Josiah Purtlebaugh
+                        
+                        
+                        
+                        on
+                        Monday, August 24, 2020
+                        
+                        
+                        
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>TOC</h2>
+                </header>
+                <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#creating-the-inventory-data-structure">Creating The Inventory Data Structure</a></li>
+        <li><a href="#creating-a-base-item">Creating A Base Item</a></li>
+        <li><a href="#implementing-item-interaction">Implementing Item Interaction</a></li>
+        <li><a href="#the-end-result">The End Result</a></li>
+        <li><a href="#final-thoughts">Final Thoughts</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                
+                <h2 id="creating-the-inventory-data-structure">Creating The Inventory Data Structure</h2>
+<p>After implementing doors and allowing the player to open and close them, it occurred to me that adding keys and a locking mechanism would be enough to breathe life into the first solid game mechanic of my current prototype. With that in mind, I realized that in order to unlock a door the player must be carrying a key, so I must first implement some simple inventory management. I&rsquo;ll describe below how I went about it.</p>
+<p>First, I took stock of the requirements of an inventory system:</p>
+<ul>
+<li>Display items (static meshes) in the game world that are interactable</li>
+<li>Upon interaction, add the item to the player&rsquo;s inventory for tracking (and hide the item model)</li>
+<li>Upon interacting with another object, optionally use the item from the player&rsquo;s inventory and affect the target</li>
+</ul>
+<p>The first step was the model the system of blueprints to describe an inventory and items. We must begin with the simplest components and build up, so I started with an <code>enum</code> to describe item types, called ItemTypes. You can create an enum from the Content Browser via Add New -&gt; Blueprints -&gt; Enumeration. I added a single item called <code>KEY</code> because the type of item I wanted to add first was a key.</p>
+<p>Please note, my system language is in Japanese so your screen may look slightly different.</p>
+<p>
+  <img src="/2020-08-24-ItemTypes.png" alt="ItemTypes Enum">
+
+</p>
+<p>After adding the ItemTypes enum, it was time to add a new struct to describe an item. I created a struct (Content Browser -&gt; Add New -&gt; Blueprints -&gt; Struct) with the following fields.</p>
+<ul>
+<li><code>Type</code> of type <code>ItemTypes</code>, to store what type of item this is</li>
+<li><code>Name</code> of type <code>Name</code>, to store the item name</li>
+<li><code>Amount</code> of type <code>Integer</code>, to store the amount of items (perhaps this is a stack of two keys)</li>
+<li><code>StaticMesh</code> of type <code>StaticMesh</code>, for future reasons (such as if the player drops the item later)</li>
+</ul>
+<p>
+  <img src="/2020-08-24-Item.png" alt="Item Struct">
+
+</p>
+<p>With the <code>Item</code> struct implemented, I finally created the <code>Inventory</code> struct (Content Browser -&gt; Add New -&gt; Blueprints -&gt; Struct). The <code>Inventory</code> struct is simple as it contains only an Array of Items. Be sure to click the little blue dot next to the dropdown box to set it to <code>Array</code>.</p>
+<p>
+  <img src="/2020-08-24-Inventory.png" alt="Inventory Struct">
+
+</p>
+<p>Before moving on, quickly head over to your Player Blueprint and add the <code>Inventory</code> variable and just call it <code>Inventory</code>.</p>
+<h2 id="creating-a-base-item">Creating A Base Item</h2>
+<p>Next, we will need to create the blueprint upon which all items will be based. I called mine Item_BP, and I created it via Add New -&gt; Blueprint Class. I chose to use the Actor type. Start by adding a simple static mesh and setting it as the scene root. Next, we&rsquo;ll add a new variable and set the name to <code>Item</code> and the type to <code>Item</code>. In order to use the static mesh described by the <code>Item</code> struct, I set up my Constructor Script like so:</p>
+<p>
+  <img src="/2020-08-24-Item_BP-Constructor.png" alt="Item_BP Constructor">
+
+</p>
+<p>Next, head over to the event graph so we can implement the click interaction. In this example there are two custom functions called <code>IsPlayerCloseEnoughToActivate</code> and <code>AddToInventory</code>.</p>
+<p>I decided to add <code>IsPlayerCloseEnoughToActivate</code> to a custom function library. You can add this via Content Browser -&gt; Add New -&gt; Blueprints -&gt; Function Library. This could just as easily be implemented directly on the Player Blueprint if you so desire. Essentially this blueprint measures the distance between the current actor and the player and returns whether the object is within <code>ActivateDistance</code> (a float on the Player Blueprint).</p>
+<p>
+  <img src="/2020-08-24-IsPlayerCloseEnoughToActivate.png" alt="IsPlayerCloseEnoughToActivate">
+
+</p>
+<p>As for <code>AddToInventory</code>, this was implemented directly on the Player Blueprint. Very simply, it takes a target Actor (which is cast to Item_BP and adds the relevant data to the Player&rsquo;s <code>Inventory</code> variable).</p>
+<p>
+  <img src="/2020-08-24-AddToInventory.png" alt="AddToInventory">
+
+</p>
+<p>Finally, we can build out the event graph for <code>Item_BP</code>. A very simple blueprint that when clicked checks whether or not the player is within range. If so, it adds the item to the player&rsquo;s inventory and destroys the Item_BP from the game world.</p>
+<p>
+  <img src="/2020-08-24-Item_BP-EventGraph.png" alt="Item_BP Event Graph">
+
+</p>
+<p>Before moving on to using items from the inventory, let&rsquo;s create <code>Item_Key_BP</code> which will allow us to place the key in the scene. Right-clicking on <code>Item_BP</code> shows the option to create a child class, so let&rsquo;s do that and name it <code>Item_Key_BP</code>. In the Blueprint Editor, click on <code>Item_Key_BP(Self)</code> in the top left and on the right you will see the Blueprint details. A section labeled Default will show the <code>Item</code> variable we created on <code>Item_BP</code>. Expanding this will allow you to set the details for this Blueprint. Thanks to the <code>Item_BP</code> Constructor we created above, setting the <code>StaticMesh</code> variable here will allow the model to show in the scene immediately.</p>
+<p>
+  <img src="/2020-08-24-Item_Key_BP-Details.png" alt="Item_Key_BP Details">
+
+</p>
+<p>After you&rsquo;ve created <code>Item_Key_BP</code>, place an instance into your scene and the model should appear.</p>
+<h2 id="implementing-item-interaction">Implementing Item Interaction</h2>
+<p>To demonstrate interaction using items we will allow the key to unlock a door that has been placed in the scene. I will gloss over the details regarding the full door implementation and focus on the item interaction. In order to allow items to be used, we will add a new function to the Player Blueprint called <code>ConsumeItem</code>. Upon being executed this code will simply delete the item from the player&rsquo;s inventory.</p>
+<p>
+  <img src="/2020-08-24-ConsumeItem.png" alt="ConsumeItem">
+
+</p>
+<p>Below is a screenshot of the primary Event Graph for my Door Blueprint. In this Blueprint I have utilized the <code>IsPlayerCloseEnoughToActivate</code> function again to check the distance from the player. If close enough, another custom function called <code>UnlockIfPlayerHasKey</code> is called. From there, the Blueprint plays an opening or closing animation.</p>
+<p>
+  <img src="/2020-08-24-Door_BP.png" alt="Door_BP">
+
+</p>
+<p>Let&rsquo;s take a closer look at <code>UnlockIfPlayerHasKey</code> below. In this custom function, we first checked to see if the door <code>isLocked</code>. If not, we return <code>false</code> which allows the door to open. If <code>true</code>, we cast the current Actor to <code>Item_BP</code> and call a simple custom function called <code>HasItemType</code> to determine if an item of type <code>KEY</code> is in the Player&rsquo;s Inventory. If there is a <code>KEY</code>, we call <code>ConsumeItem</code> and set <code>isLocked</code> to false. If there is no key, we call a custom event called <code>Display Message</code> and set <code>isLocked</code> to true (not strictly necessary, but it seemed to add clarity to the example). <code>HasItemType</code>, show below, is implemented on the Player Blueprint and just loops through the inventory and returns the first item of matching type. Otherwise, it returns false.</p>
+<p>
+  <img src="/2020-08-24-UnlockIfPlayerHasKey.png" alt="UnlockIfPlayerHasKey">
+
+</p>
+<p>
+  <img src="/2020-08-24-HasItemType.png" alt="HasItemType">
+
+</p>
+<p>The last quick piece of the puzzle is adding the custom event called <code>Display Message</code>. This can be done directly in the Door Blueprint by right-clicking and adding a new custom event called <code>Display Message</code>. I&rsquo;ve set it up below so that it displays a message for 3 seconds and then hides the message again.</p>
+<p>
+  <img src="/2020-08-24-DisplayMessage.png" alt="DisplayMessage">
+
+</p>
+<h2 id="the-end-result">The End Result</h2>
+<p>I ended up with the result shown in the video below. The message is displayed when clicking on the door, the key is picked up, and the door is finally unlocked after picking up the key.</p>
+<video style="margin: 0 auto; display: block;" width="640" height="360" controls align="center">
+  <source src="/2020-08-24-FinalResult.mp4" type="video/mp4">
+</video>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>There are a lot of improvements that could be made to this very simple system, but I wanted to focus on my first iteration as I continue to learn Unreal Engine 4. If something here is unclear or incorrect then please reach out to me via twitter and I will be happy to clarify or update the tutorial.</p>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2020/08/animating-the-door/" data-toggle="tooltip" data-placement="top"
+                            title="Animating the Door">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        <a href="/tags/animation" title="animation">
+                            animation
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/blender" title="blender">
+                            blender
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/blueprint" title="blueprint">
+                            blueprint
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/ue4" title="ue4">
+                            ue4
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/unreal" title="unreal">
+                            unreal
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    <li>
+                        <a href='' rel="alternate"
+                            type="application/rss+xml" title="Josiah Purtlebaugh">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="mailto:josiah.purtlebaugh@gmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li>
+                        <a href="https://twitter.com/toraton">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+
+                    
+
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/josiahp">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/josiahpurtlebaugh/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Josiah Purtlebaugh 2020
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+        s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if ($('#tag_cloud').length !== 0) {
+        async("/js/jquery.tagcloud.js", function () {
+            $.fn.tagcloud.defaults = {
+                
+                color: { start: '#bbbbee', end: '#0085a1' },
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function () {
+        var $nav = document.querySelector("nav");
+        if ($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+</body>
+</html>
