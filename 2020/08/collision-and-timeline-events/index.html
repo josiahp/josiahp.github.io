@@ -209,11 +209,6 @@
                 post-container">
 
                 
-                <header>
-                    <h2>TOC</h2>
-                </header>
-                <nav id="TableOfContents"></nav>
-                
                 <p>Summary of accomplishment:</p>
 <ul>
 <li>Learned widget blueprints and how to modify their values</li>
@@ -225,19 +220,19 @@
 <p>I started off today by implementing a simple health bar. It took me a few hours to implement for one simple reason: after creating the widget blueprint I could not figure out how to set the widget values from the enemy blueprint.</p>
 <p>It seems like it should be obvious, but after adding the widget component to the enemy and dragging it into the event graph, I was not able to access any of the functions defined in the widget blueprint. What I didn&rsquo;t understand is that even if you set the widget class in the widget component of the enemy blueprint, you still need to cast the widget to the correct widget class in the event graph before you can call its member functions.</p>
 <p>
-  <img src="/2020-08-21-update-widget-values.png" alt="Update Widget Values from Actor Blueprint">
+  <img src="/2020-08-21/update-widget-values.png" alt="Update Widget Values from Actor Blueprint">
 
 </p>
 <p>Next, I tried to sort out how to do collisions. Collisions were happening by default, but upon swinging the weapon the enemy would fly off into space. Hmm. Simulate physics was disabled, so it was nothing to do with ragdoll physics. Ultimately the issue seemed to the on the distinction between the collision types. I changed the weapon from BlockAll to OverlapAll and suddenly collisions were firing without the wacky model behavior.</p>
 <p>Next, I went into the enemy blueprint and decided to make the color change upon collision. I did with the graph below.</p>
 <p>
-  <img src="/2020-08-21-collision.png" alt="React to Collisions">
+  <img src="/2020-08-21/collision.png" alt="React to Collisions">
 
 </p>
 <p>I am not sure how this will look once I start adding more conditional collisions, but hopefully it won&rsquo;t become too messy.</p>
 <p>Finally, I added enemy damage. This was as simple as lowering the currentHealth after each iteration of the timeline event (I really should do it before the timeline event). On each Tick I check the enemy health and if it is lower than or equal to zero, I delete the enemy actor. That was easy!</p>
 <p>
-  <img src="/2020-08-21-ragdoll-on-death.png" alt="Ragdoll on Death">
+  <img src="/2020-08-21/ragdoll-on-death.png" alt="Ragdoll on Death">
 
 </p>
 <video style="margin: 0 auto; display: block;" width="640" height="360" controls align="center">

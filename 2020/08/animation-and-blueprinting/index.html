@@ -221,11 +221,6 @@
                 post-container">
 
                 
-                <header>
-                    <h2>TOC</h2>
-                </header>
-                <nav id="TableOfContents"></nav>
-                
                 <p>Summary of accomplishment:</p>
 <ul>
 <li>Animate the monster (and tweak the rig/weight painting)</li>
@@ -237,7 +232,7 @@ There was nothing specifically difficult about the animating, except that the ri
 <p>I struggled a lot with the UE4 import as upon importing the animations were far too small. In the end, I set the Blender world scale to 0.1 and upon importing to UE4 I set the monster scale up by 50. This is not the correct way, as I should not have to modify the scale in UE4.</p>
 <p>The monster chases the player after a short delay (in order to capture the video). The chase is driven by a Simple Move to Actor on the Monster blueprint. I had to add a Navmesh before the monster AI would move at all.</p>
 <video style="margin: 0 auto; display: block;" width="640" height="360" controls align="center">
-  <source src="/2020-08-20-monster-chase.mp4" type="video/mp4">
+  <source src="/2020-08-20/monster-chase.mp4" type="video/mp4">
 </video>
 
                 
