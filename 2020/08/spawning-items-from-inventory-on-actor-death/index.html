@@ -209,11 +209,6 @@
                 post-container">
 
                 
-                <header>
-                    <h2>TOC</h2>
-                </header>
-                <nav id="TableOfContents"></nav>
-                
                 <p>Summary of accomplishment:</p>
 <ul>
 <li>Began abstracting Inventory as an Actor Component Blueprint</li>
@@ -226,12 +221,12 @@
   <img src="/2020-08-26/InventoryActorComponentBlueprint.png" alt="Inventory Actor Component Blueprint">
 
 </p>
-<p>One thing to note: in the graph above, you can see in the For Each Loop that <code>Iventory Items</code> has a member called <code>Class Ref</code>. <code>Class Ref</code> contains a soft class referenced (meaning it may or may not be actually loaded into memory). I added this member to <code>Item</code> so that I could pass it to the <code>Spawn Actor</code> function.</p>
+<p>One thing to note: in the graph above, you can see in the For Each Loop that <code>Iventory Items</code> has a member called <code>Class Ref</code>. <code>Class Ref</code> contains a soft class referenced (meaning it may or may not be actually loaded into memory). I added this member to <code>Item</code> so that I could pass it to the <code>Spawn Actor</code> function. Because I am using a soft reference I expect that this code will run into problems if I try to spawn a class that hasn&rsquo;t been loaded but that is a problem for another time.</p>
 <p>
   <img src="/2020-08-26/UpdatedItemStruct.png" alt="Updated Item Struct">
 
 </p>
-<p>With this done, all I had to do was head over to <code>Monster_BP</code> and make a few adjustments. I added a call to the new custom event <code>DropAllItems</code> into the flow that processes monster death. Also, in the <code>BeginPlay</code> event chain I passed the Monster&rsquo;s local <code>Inventory</code> variable into the <code>Inventory</code> variable contained in <code>Inventory_BP</code>. In the future I will set the contents of <code>Inventory</code> from a Construction</p>
+<p>With this done, all I had to do was head over to <code>Monster_BP</code> and make a few adjustments. I added a call to the new custom event <code>DropAllItems</code> into the flow that processes monster death. Also, in the <code>BeginPlay</code> event chain I passed the Monster&rsquo;s local <code>Inventory</code> variable into the <code>Inventory</code> variable contained in <code>Inventory_BP</code>. In the future I will set the contents of <code>Inventory</code> from a Construction Script so that I don&rsquo;t have to juggle it in two places.</p>
 
 
                 
