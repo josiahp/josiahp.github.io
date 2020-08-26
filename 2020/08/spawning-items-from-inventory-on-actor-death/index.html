@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="" />
-    <meta property="og:title" content="" />
-    <meta property="twitter:title" content="" />
+    <meta name="title" content="Spawning Items From Inventory on Actor Death" />
+    <meta property="og:title" content="Spawning Items From Inventory on Actor Death" />
+    <meta property="twitter:title" content="Spawning Items From Inventory on Actor Death" />
     
 
     
@@ -27,16 +27,16 @@
     
 
     
-    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:card" content="Adding functionality to the simple inventory system" />
     
     
 
     <meta name="keyword"  content="">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Categories-Josiah Purtlebaugh</title>
+    <title>Spawning Items From Inventory on Actor Death-Josiah Purtlebaugh</title>
 
-    <link rel="canonical" href="/categories/">
+    <link rel="canonical" href="/2020/08/spawning-items-from-inventory-on-actor-death/">
 
     <link rel="stylesheet" href="/css/iDisqus.min.css"/>
 	
@@ -142,14 +142,53 @@
 
 
 
-<header class="intro-header" style="background-image: url('/header.jpg')">
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/header.jpg')
+    }
+</style>
+<header class="intro-header">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>Josiah Purtlebaugh </h1>
-                    
-		    <span class="subheading"></span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/ue4" title="ue4">
+                            ue4
+                        </a>
+                        
+                        <a class="tag" href="/tags/unreal-engine" title="unreal engine">
+                            unreal engine
+                        </a>
+                        
+                        <a class="tag" href="/tags/inventory" title="inventory">
+                            inventory
+                        </a>
+                        
+                        <a class="tag" href="/tags/blueprint" title="blueprint">
+                            blueprint
+                        </a>
+                        
+                    </div>
+                    <h1>Spawning Items From Inventory on Actor Death</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                        Posted by
+                        
+                        Josiah Purtlebaugh
+                        
+                        
+                        
+                        on
+                        Wednesday, August 26, 2020
+                        
+                        
+                        
+                        
+                    </span>
                 </div>
             </div>
         </div>
@@ -162,13 +201,53 @@
 <article>
     <div class="container">
         <div class="row">
+
             
             <div class="
-                col-lg-8 col-lg-offset-2
+                col-lg-11 col-lg-offset-1
                 col-md-10 col-md-offset-1
                 post-container">
 
-         	
+                
+                <header>
+                    <h2>TOC</h2>
+                </header>
+                <nav id="TableOfContents"></nav>
+                
+                <p>Summary of accomplishment:</p>
+<ul>
+<li>Began abstracting Inventory as an Actor Component Blueprint</li>
+<li>Monsters can now spawn their inventory as actors upon their death</li>
+</ul>
+<p>A quick update today! After implementing the inventory, I realized that what I really wanted was to abstract the Inventory system to its own Blueprint to be added to other actors. But how?</p>
+<p>The answer is the Actor Component Blueprint. This type of Blueprint can be added as a component to any Actor and allows the component to handle its own events, contain functions and variables, and tick. For the inventory this is perfect. I created a new Actor Component Blueprint called <code>Inventory_BP</code> and added a variable of type <code>Inventory</code> to it and called it, well, <code>Inventory</code>.</p>
+<p>For starters, all I really wanted was to allow Monsters to drop Keys upon dying, so I wrote the event graph below that responds to a new custom event called <code>DropAllItems</code>.</p>
+<p>
+  <img src="/2020-08-26/InventoryActorComponentBlueprint.png" alt="Inventory Actor Component Blueprint">
+
+</p>
+<p>One thing to note: in the graph above, you can see in the For Each Loop that <code>Iventory Items</code> has a member called <code>Class Ref</code>. <code>Class Ref</code> contains a soft class referenced (meaning it may or may not be actually loaded into memory). I added this member to <code>Item</code> so that I could pass it to the <code>Spawn Actor</code> function.</p>
+<p>
+  <img src="/2020-08-26/UpdatedItemStruct.png" alt="Updated Item Struct">
+
+</p>
+<p>With this done, all I had to do was head over to <code>Monster_BP</code> and make a few adjustments. I added a call to the new custom event <code>DropAllItems</code> into the flow that processes monster death. Also, in the <code>BeginPlay</code> event chain I passed the Monster&rsquo;s local <code>Inventory</code> variable into the <code>Inventory</code> variable contained in <code>Inventory_BP</code>. In the future I will set the contents of <code>Inventory</code> from a Construction</p>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2020/08/creating-a-simple-inventory-system/" data-toggle="tooltip" data-placement="top"
+                            title="Creating a Simple Inventory System">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+
                 
 <div id="disqus-comment"></div>
 
@@ -177,7 +256,7 @@
             </div>
             
             <div class="
-                col-lg-8 col-lg-offset-2
+                col-lg-11 col-lg-offset-1
                 col-md-10 col-md-offset-1
                 sidebar-container">
 
@@ -191,19 +270,19 @@
                         
                         
                         <a href="/tags/animation" title="animation">
-                        animation
+                            animation
                         </a>
                         
                         
                         
                         <a href="/tags/blender" title="blender">
-                        blender
+                            blender
                         </a>
                         
                         
                         
                         <a href="/tags/blueprint" title="blueprint">
-                        blueprint
+                            blueprint
                         </a>
                         
                         
@@ -211,7 +290,7 @@
                         
                         
                         <a href="/tags/inventory" title="inventory">
-                        inventory
+                            inventory
                         </a>
                         
                         
@@ -225,7 +304,7 @@
                         
                         
                         <a href="/tags/ue4" title="ue4">
-                        ue4
+                            ue4
                         </a>
                         
                         
@@ -233,13 +312,13 @@
                         
                         
                         <a href="/tags/unreal" title="unreal">
-                        unreal
+                            unreal
                         </a>
                         
                         
                         
                         <a href="/tags/unreal-engine" title="unreal-engine">
-                        unreal-engine
+                            unreal-engine
                         </a>
                         
                         
@@ -268,7 +347,7 @@
                 <ul class="list-inline text-center">
                     
                     <li>
-                        <a href='/categories/index.xml' rel="alternate"
+                        <a href='' rel="alternate"
                             type="application/rss+xml" title="Josiah Purtlebaugh">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
