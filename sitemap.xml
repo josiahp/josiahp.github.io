@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://josiahp.github.com/</loc>
+    <lastmod>2020-08-29T00:13:45+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://josiahp.github.com/post/</loc>
+    <lastmod>2020-08-29T00:13:45+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://josiahp.github.com/2020/08/solving-my-animation-blending-woes/</loc>
+    <lastmod>2020-08-29T00:13:45+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://josiahp.github.com/tags/animation/</loc>
     <lastmod>2020-08-27T23:23:20+09:00</lastmod>
   </url>
@@ -13,17 +28,7 @@
   </url>
   
   <url>
-    <loc>https://josiahp.github.com/</loc>
-    <lastmod>2020-08-27T23:23:20+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://josiahp.github.com/tags/modeling/</loc>
-    <lastmod>2020-08-27T23:23:20+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://josiahp.github.com/post/</loc>
     <lastmod>2020-08-27T23:23:20+09:00</lastmod>
   </url>
   

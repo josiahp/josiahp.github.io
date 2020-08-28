@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="Speeding Things Up" />
-    <meta property="og:title" content="Speeding Things Up" />
-    <meta property="twitter:title" content="Speeding Things Up" />
+    <meta name="title" content="Solving My Animation Blending Woes" />
+    <meta property="og:title" content="Solving My Animation Blending Woes" />
+    <meta property="twitter:title" content="Solving My Animation Blending Woes" />
     
 
     
@@ -27,16 +27,16 @@
     
 
     
-    <meta property="twitter:card" content="Making some quicker animations and prototyping new meshes" />
+    <meta property="twitter:card" content="Bug squashing and animation tweaks, plus a custom collider!" />
     
     
 
     <meta name="keyword" content="">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Speeding Things Up-Josiah Purtlebaugh</title>
+    <title>Solving My Animation Blending Woes-Josiah Purtlebaugh</title>
 
-    <link rel="canonical" href="/2020/08/speeding-things-up/">
+    <link rel="canonical" href="/2020/08/solving-my-animation-blending-woes/">
 
     <link rel="stylesheet" href="/css/iDisqus.min.css" />
 
@@ -164,28 +164,8 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/ue4" title="ue4">
-                            ue4
-                        </a>
-                        
-                        <a class="tag" href="/tags/unreal-engine" title="unreal engine">
-                            unreal engine
-                        </a>
-                        
-                        <a class="tag" href="/tags/blender" title="blender">
-                            blender
-                        </a>
-                        
-                        <a class="tag" href="/tags/animation" title="animation">
-                            animation
-                        </a>
-                        
-                        <a class="tag" href="/tags/modeling" title="modeling">
-                            modeling
-                        </a>
-                        
                     </div>
-                    <h1>Speeding Things Up</h1>
+                    <h1>Solving My Animation Blending Woes</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         
@@ -196,7 +176,7 @@
                         
                         
                         on
-                        Thursday, August 27, 2020
+                        Saturday, August 29, 2020
                         
                         
                         
@@ -224,25 +204,46 @@
                 
                 <p>Summary of accomplishment:</p>
 <ul>
-<li>Modeled and animated a trap: spears that shoot up from the ground</li>
-<li>Animated a faster walk, faster attack, and new run cycle</li>
-<li>Created two simple grass meshes</li>
+<li>Solved the issue where attack animation did not blend when running</li>
+<li>Created a blend space for idle/walk/run to simplify the animation state machine</li>
+<li>Created a stairs mesh (with custom collider)</li>
 </ul>
-<p>My main goal tonight was to make some traps to populate the game and create some obstacles. I started off by taking my existing block mesh and using booleans to cut holes from it. I modeled spears into the holes and then quickly animated them shooting up.</p>
-<video style="margin: 0 auto; display: block;" width="640" height="360" controls align="center">
-  <source src="/2020-08-27/SpearBlock.mp4" type="video/mp4">
-</video>
-<p>Next, I decided that I was tired of moving so slowly during testing so I scaled up the normal walk and called it FastWalk. Then, I duplicated that and modeled a very fast 12-frame run. When the player holds shift, the <code>Run</code> variable is set to true and the max walk speed becomes 480. As a result, in the animation blueprint, the state changes from Walk to Run.</p>
-<video style="margin: 0 auto; display: block;" width="640" height="360" controls align="center">
-  <source src="/2020-08-27/FastWalkAndRun.mp4" type="video/mp4">
-</video>
-<p>I started to setup layered animations to blend the attack and run together, but unfortunately I did something wrong and the attack animation barely moves the player&rsquo;s arms if played during run. I wonder if it has something to do with the animation scale. I&rsquo;ll need to do more studying and testing.</p>
-<p>And finally, I modeled some simple grass meshes. I&rsquo;ll paint them into the game sometime soon.</p>
+<p>Yesterday I said,</p>
+<blockquote>
+<p>I started to setup layered animations to blend the attack and run together, but unfortunately I did something wrong and the attack animation
+barely moves the player&rsquo;s arms if played during run. I wonder if it has something to do with the animation scale. I&rsquo;ll need to do more studying
+and testing.</p>
+</blockquote>
+<p>Recently I shortened the attack animation to only 7 or so frames in order to allow rapid attacks. Upon implementing animation layering I found that the montage appeared to play only very briefly before ending. Shortly after going to bed the solution came to me: the blend in/out duration was too long for such a short animation.</p>
+<p>I opened up the Animation Montage responsible for the attack animation and set the Blend In/Out to zero, effectively disabling the blending. Now the attack animation plays in full on even while walking and running!</p>
 <p>
-  <img src="/2020-08-27/GrassMeshes.png" alt="Grass Meshes">
+  <img src="/2020-08-28/AttackBlendInOut.png" alt="Attack Blend Settings">
 
 </p>
+<video style="margin: 0 auto; display: block;" width="640" height="360" controls align="center">
+  <source src="/2020-08-28/BlendedAttackAndMove.mp4" type="video/mp4">
+</video>
+<p>Next, I decided to change out my Walk/Run logic for a simple Blend Space that will blend between the Idle, Walk, FastWalk, and Run states dynamically based on the character&rsquo;s movement speed. This was extremely easy to do. I created a 1D Blend Space via the Content Browser -&gt; Animation -&gt; 1D Blend Space menu. I named the single axis <code>Speed</code> and sex the maximum to 500 as my character&rsquo;s max speed is 480. I set the number of divisions to 5, then I placed the Idle at 0, the Walk at 100, the FastWalk at 200, and the Run at 400.</p>
+<p>Next, I went over to the animation blueprint and I swapped out the Idle animation for the IdleWalkRun blend space and that was it! The Animation Blueprint State Machine currently looks like this:</p>
+<p>
+  <img src="/2020-08-28/AnimationStateMachine.png" alt="Character Animation State Machine">
 
+</p>
+<p>I realized that my Attack Ready pose, with the weapon held forward, was not being blended properly with my IdleWalkRun Blend Space. After a bit of considering, I setup my IdleSwordOut state like below and it blended the two animations perfectly.</p>
+<p>
+  <img src="/2020-08-28/IdleSwordOutBlend.png" alt="Blending the Attack Ready Pose">
+
+</p>
+<p>Moving on, I was dissatisfied with how the camera jolted as I went up the stairs, so I decided to set the collision on the stairs to be a flat ramp. This posed a problem as I couldn&rsquo;t figure out how to edit the collision mesh directly in UE4. After some research, I found a very simple way to model custom collision meshes in Blender (exported as FBX).</p>
+<p>For the model below, called <code>BlockStairs</code>, I surrounded them with a very primitive shape modeled from a cube with the display set to wireframe. In order to use this mesh as the collision mesh there are two requirements: its name must begin with <code>UCX_</code> and it must be parented to the object for which it provides collision. Therefore for my <code>BlockStairs</code> model I named it <code>UCX_BlockStairs</code> and parented it to <code>BlockStairs</code>. When I exported the FBX and imported to UE4, the collision mesh showed up under simple collision.</p>
+<p>
+  <img src="/2020-08-28/BlockStairs.png" alt="A blocky stairs model">
+
+</p>
+<p>Finally, a brief demo of my testing sandbox with all the recent developments.</p>
+<video style="margin: 0 auto; display: block;" width="640" height="360" controls align="center">
+  <source src="/2020-08-28/Demo.mp4" type="video/mp4">
+</video>
 
                 
 
@@ -250,17 +251,11 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2020/08/spawning-items-from-inventory-on-actor-death/" data-toggle="tooltip" data-placement="top"
-                            title="Spawning Items From Inventory on Actor Death">&larr;
+                        <a href="/2020/08/speeding-things-up/" data-toggle="tooltip" data-placement="top"
+                            title="Speeding Things Up">&larr;
                             Previous Post</a>
                     </li>
                     
-                    
-                    <li class="next">
-                        <a href="/2020/08/solving-my-animation-blending-woes/" data-toggle="tooltip" data-placement="top"
-                            title="Solving My Animation Blending Woes">Next
-                            Post &rarr;</a>
-                    </li>
                     
                 </ul>
 
