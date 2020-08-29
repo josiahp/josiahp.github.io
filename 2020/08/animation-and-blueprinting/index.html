@@ -54,7 +54,7 @@
         type="text/css">
 
     
-    
+    <link rel="stylesheet" href="https://josiahp.github.com/css/josiahp.css">
 
     
     
@@ -240,7 +240,7 @@
 There was nothing specifically difficult about the animating, except that the rig is very poor and the weight painting is even worse, so the mesh does not deform well. I&rsquo;m not too worried about it for now as I can make a real monster later.</p>
 <p>I struggled a lot with the UE4 import as upon importing the animations were far too small. In the end, I set the Blender world scale to 0.1 and upon importing to UE4 I set the monster scale up by 50. This is not the correct way, as I should not have to modify the scale in UE4.</p>
 <p>The monster chases the player after a short delay (in order to capture the video). The chase is driven by a Simple Move to Actor on the Monster blueprint. I had to add a Navmesh before the monster AI would move at all.</p>
-<video style="margin: 0 auto; display: block;" width="640" height="360" controls align="center">
+<video controls>
   <source src="/2020-08-20/monster-chase.mp4" type="video/mp4">
 </video>
 

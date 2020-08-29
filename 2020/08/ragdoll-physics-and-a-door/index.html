@@ -54,7 +54,7 @@
         type="text/css">
 
     
-    
+    <link rel="stylesheet" href="https://josiahp.github.com/css/josiahp.css">
 
     
     
@@ -225,7 +225,7 @@
 </ul>
 <p>I first decided to tackle making the enemies ragdoll without falling through the ground. Ultimately the solution was to apply simple collision to my static mesh object that is the ground.</p>
 <p>Unfortunately the animation continues to play past death. Even though isDead is properly being updated, the animation does not move to the new state. I&rsquo;ll have to look into it further later.</p>
-<video style="margin: 0 auto; display: block;" width="640" height="360" controls align="center">
+<video controls>
   <source src="/2020-08-22/ragdoll.mp4" type="video/mp4">
 </video>
 <p>Wanting to make some progress on game mechanics, I decided to add a door so that I could begin playing with locked doors and keys. There&rsquo;s not much to say; I modeled a door (very simply) and imported it into UE4. One hurdle I faced was the navmash on the doorway object blocking pathfinding, but I was able to resolve it by using complex physics, and later using simple physics with multiple colliders.</p>

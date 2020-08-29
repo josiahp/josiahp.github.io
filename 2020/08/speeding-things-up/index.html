@@ -54,7 +54,7 @@
         type="text/css">
 
     
-    
+    <link rel="stylesheet" href="https://josiahp.github.com/css/josiahp.css">
 
     
     
@@ -229,11 +229,11 @@
 <li>Created two simple grass meshes</li>
 </ul>
 <p>My main goal tonight was to make some traps to populate the game and create some obstacles. I started off by taking my existing block mesh and using booleans to cut holes from it. I modeled spears into the holes and then quickly animated them shooting up.</p>
-<video style="margin: 0 auto; display: block;" width="640" height="360" controls align="center">
+<video controls>
   <source src="/2020-08-27/SpearBlock.mp4" type="video/mp4">
 </video>
 <p>Next, I decided that I was tired of moving so slowly during testing so I scaled up the normal walk and called it FastWalk. Then, I duplicated that and modeled a very fast 12-frame run. When the player holds shift, the <code>Run</code> variable is set to true and the max walk speed becomes 480. As a result, in the animation blueprint, the state changes from Walk to Run.</p>
-<video style="margin: 0 auto; display: block;" width="640" height="360" controls align="center">
+<video controls>
   <source src="/2020-08-27/FastWalkAndRun.mp4" type="video/mp4">
 </video>
 <p>I started to setup layered animations to blend the attack and run together, but unfortunately I did something wrong and the attack animation barely moves the player&rsquo;s arms if played during run. I wonder if it has something to do with the animation scale. I&rsquo;ll need to do more studying and testing.</p>

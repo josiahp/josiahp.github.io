@@ -54,7 +54,7 @@
         type="text/css">
 
     
-    
+    <link rel="stylesheet" href="https://josiahp.github.com/css/josiahp.css">
 
     
     
@@ -252,10 +252,13 @@ and testing.</p>
   <img src="/2020-08-28/AttackBlendInOut.png" alt="Attack Blend Settings">
 
 </p>
-<video style="margin: 0 auto; display: block;" width="640" height="360" controls align="center">
+<video controls>
   <source src="/2020-08-28/BlendedAttackAndMove.mp4" type="video/mp4">
 </video>
-<p>Next, I decided to change out my Walk/Run logic for a simple Blend Space that will blend between the Idle, Walk, FastWalk, and Run states dynamically based on the character&rsquo;s movement speed. This was extremely easy to do. I created a 1D Blend Space via the Content Browser -&gt; Animation -&gt; 1D Blend Space menu. I named the single axis <code>Speed</code> and sex the maximum to 500 as my character&rsquo;s max speed is 480. I set the number of divisions to 5, then I placed the Idle at 0, the Walk at 100, the FastWalk at 200, and the Run at 400.</p>
+<p>Next, I decided to change out my Walk/Run logic for a simple Blend Space that will blend between the Idle, Walk, FastWalk, and Run states dynamically based on the character&rsquo;s movement speed. This was extremely easy to do. I created a 1D Blend Space via the Content Browser -&gt; Animation -&gt; 1D Blend Space menu. I named the single axis <code>Speed</code> and set the maximum to 500 as my character&rsquo;s max speed is 480. I set the number of divisions to 5, then I placed the Idle at 0, the Walk at 100, the FastWalk at 200, and the Run at 400.</p>
+<video controls>
+  <source src="/2020-08-28/IdleWalkRunBlendSpace.mp4" type="video/mp4">
+</video>
 <p>Next, I went over to the animation blueprint and I swapped out the Idle animation for the IdleWalkRun blend space and that was it! The Animation Blueprint State Machine currently looks like this:</p>
 <p>
   <img src="/2020-08-28/AnimationStateMachine.png" alt="Character Animation State Machine">
@@ -273,7 +276,7 @@ and testing.</p>
 
 </p>
 <p>Finally, a brief demo of my testing sandbox with all the recent developments.</p>
-<video style="margin: 0 auto; display: block;" width="640" height="360" controls align="center">
+<video controls>
   <source src="/2020-08-28/Demo.mp4" type="video/mp4">
 </video>
 
