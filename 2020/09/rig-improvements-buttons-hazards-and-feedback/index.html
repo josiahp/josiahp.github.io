@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Josiah Purtlebaugh">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://josiahp.net//header.jpg">
+    <meta property="twitter:image" content="https://josiahp.net//header.jpg" />
+    
+
+    
+    <meta name="title" content="Rig Improvements, Buttons, Hazards, and Feedback" />
+    <meta property="og:title" content="Rig Improvements, Buttons, Hazards, and Feedback" />
+    <meta property="twitter:title" content="Rig Improvements, Buttons, Hazards, and Feedback" />
+    
+
+    
+    <meta name="description" content="">
+    <meta property="og:description" content="" />
+    <meta property="twitter:description" content="" />
+    
+
+    
+    <meta property="twitter:card" content="I&#39;ve improved the rig and added several new features." />
+    
+    
+
+    <meta name="keyword" content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Rig Improvements, Buttons, Hazards, and Feedback-Josiah Purtlebaugh</title>
+
+    <link rel="canonical" href="/2020/09/rig-improvements-buttons-hazards-and-feedback/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css" />
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css">
+
+    
+    <link rel="stylesheet" href="https://josiahp.net/css/josiahp.css">
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176554917-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-176554917-1');
+    </script>
+
+</head>
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Josiah Purtlebaugh</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                    
+                    
+		    
+                        <li><a href="/"></a></li>
+                    
+                        <li><a href="/about/">ABOUT</a></li>
+                    
+
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/header.jpg')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/blender" title="blender">
+                            blender
+                        </a>
+                        
+                        <a class="tag" href="/tags/animation" title="animation">
+                            animation
+                        </a>
+                        
+                        <a class="tag" href="/tags/rigging" title="rigging">
+                            rigging
+                        </a>
+                        
+                        <a class="tag" href="/tags/ue4" title="ue4">
+                            ue4
+                        </a>
+                        
+                        <a class="tag" href="/tags/unreal-engine" title="unreal engine">
+                            unreal engine
+                        </a>
+                        
+                    </div>
+                    <h1>Rig Improvements, Buttons, Hazards, and Feedback</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                        Posted by
+                        
+                        Josiah Purtlebaugh
+                        
+                        
+                        
+                        on
+                        Wednesday, September 2, 2020
+                        
+                        
+                        
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <p>Summary of accomplishment:</p>
+<ul>
+<li>Updated the placeholder rig to add arm IK and improve supination and pronation of lower arms</li>
+<li>Imported the button block and configured it to activate/deactivate based on player collision</li>
+<li>Added a <code>BallSpawner_BP</code> class that spawns hazards (balls)</li>
+<li>Added feedback to the placeholder character that causes the mesh to change color and be pushed back when taking damage</li>
+<li>Added an additional camera and enabled switching between them</li>
+</ul>
+<p>I made some significant progress since the last update so I&rsquo;ll get right into it. First, I improved the rig to allow cleaner supination/pronation (that is twisting the forearm) and IK to the arms. I&rsquo;m having trouble making clean attack animations so hopefully these improvements will help me get better results.</p>
+<p>To describe the process a bit, I took the following steps to add clean twisting to the arms:</p>
+<ol>
+<li>Duplicate the lower arm bone and hide the original</li>
+<li>Subdivide the lower arm bone twice and name the bones LowerArmTwist1, LowerArmTwist2, and LowerArmTwist3</li>
+<li>Confirm that LowerArmTwist1 is parented to the UpperArm, 2 is parented to 1, and 3 is parented to 2.</li>
+<li>Set each of the twist bones to deform and disable deforming on the original LowerArm bone</li>
+<li>Add a <code>Copy Rotation</code> constraint to the LowerArmTwist3 so that it copies the rotation of the hand; set the influence to 0.9</li>
+<li>Repeat step 4 with Twist2, copying the rotation of Twist3 with an influence of 0.7</li>
+<li>Repeat step 4 with Twist3, copying the rotation of Twist2 with an influence 0f 0.3</li>
+</ol>
+<p>Now rotating the hand should cleanly rotate the wrist without causing the arm mesh to collapse inward. I won&rsquo;t cover the details of adding arm IK here as there are numerous Youtube tutorials covering that subject and it is fairly simple.</p>
+<p>Next, I added a <code>ButtonBlock_BP</code> to the project that uses the animation I created in the <a href="/2020/08/sculpting-and-button-blocks/">previous post</a>. It has a 4-stage animation state machine that triggers it to idle in the pressed or unpressed position and it will transition to those states based on whether the play is colliding with it or not.</p>
+<video controls>
+  <source src="/2020-09-02/ButtonBlock.mp4" type="video/mp4">
+</video>
+<p>The new <code>BallSpawner_BP</code> class is a simple addition to create a new obstacle to be placed in the world. It contains a soft class reference to a basic sphere and it spawns the spheres on a timer and gives them a push with <code>Add Impulse</code>. I enabled physics and collisions and set their mass to 1000kg.</p>
+<p>I also updated the player to respond to collisions by being forced backwards and momentarily flashing a red color. It&rsquo;s starting to feel a little bit like a game!</p>
+<video controls>
+  <source src="/2020-09-02/BallSpawnerAndFeedback.mp4" type="video/mp4">
+</video>
+<p>Finally, I also added a simple camera change mechanism when the player pushes <code>c</code>.</p>
+<video controls>
+  <source src="/2020-09-02/CameraChange.mp4" type="video/mp4">
+</video>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2020/08/sculpting-and-button-blocks/" data-toggle="tooltip" data-placement="top"
+                            title="Sculpting and Button Blocks">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        <a href="/tags/animation" title="animation">
+                            animation
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/blender" title="blender">
+                            blender
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/blueprint" title="blueprint">
+                            blueprint
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/collision" title="collision">
+                            collision
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/inventory" title="inventory">
+                            inventory
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/modeling" title="modeling">
+                            modeling
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/rigging" title="rigging">
+                            rigging
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/ue4" title="ue4">
+                            ue4
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/unreal" title="unreal">
+                            unreal
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/unreal-engine" title="unreal-engine">
+                            unreal-engine
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+                <section>
+                    <hr>
+                    <h5>FRIENDS</h5>
+                    <ul class="list-inline">
+                        
+                        <li><a target="_blank" href="http://devlog.ericbuchholz.com/">Eric Buchholz&#39; Devlog</a></li>
+                        
+                    </ul>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    <li>
+                        <a href='' rel="alternate"
+                            type="application/rss+xml" title="Josiah Purtlebaugh">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="mailto:josiah.purtlebaugh@gmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li>
+                        <a href="https://twitter.com/toraton">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+
+                    
+
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/josiahp">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/josiahpurtlebaugh/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Josiah Purtlebaugh 2020
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+        s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if ($('#tag_cloud').length !== 0) {
+        async("/js/jquery.tagcloud.js", function () {
+            $.fn.tagcloud.defaults = {
+                
+                color: { start: '#bbbbee', end: '#0085a1' },
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function () {
+        var $nav = document.querySelector("nav");
+        if ($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+</body>
+</html>

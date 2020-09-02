@@ -2,21 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>rigging on Josiah Purtlebaugh</title>
-    <link>https://josiahp.github.com/tags/rigging/</link>
+    <link>https://josiahp.net/tags/rigging/</link>
     <description>Recent content in rigging on Josiah Purtlebaugh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 21 Aug 2020 00:18:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2020 22:13:12 +0900</lastBuildDate>
     
-	<atom:link href="https://josiahp.github.com/tags/rigging/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://josiahp.net/tags/rigging/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Rig Improvements, Buttons, Hazards, and Feedback</title>
+      <link>https://josiahp.net/2020/09/rig-improvements-buttons-hazards-and-feedback/</link>
+      <pubDate>Wed, 02 Sep 2020 22:13:12 +0900</pubDate>
+      
+      <guid>https://josiahp.net/2020/09/rig-improvements-buttons-hazards-and-feedback/</guid>
+      <description>I&amp;rsquo;ve improved the rig and added several new features.</description>
+    </item>
+    
+    <item>
       <title>Animation and Blueprinting</title>
-      <link>https://josiahp.github.com/2020/08/animation-and-blueprinting/</link>
+      <link>https://josiahp.net/2020/08/animation-and-blueprinting/</link>
       <pubDate>Fri, 21 Aug 2020 00:18:00 +0900</pubDate>
       
-      <guid>https://josiahp.github.com/2020/08/animation-and-blueprinting/</guid>
+      <guid>https://josiahp.net/2020/08/animation-and-blueprinting/</guid>
       <description>Today I animated the simple monster (with horrible weight painting).</description>
     </item>
     

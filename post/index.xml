@@ -2,102 +2,111 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Josiah Purtlebaugh</title>
-    <link>https://josiahp.github.com/post/</link>
+    <link>https://josiahp.net/post/</link>
     <description>Recent content in Posts on Josiah Purtlebaugh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 29 Aug 2020 23:27:56 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2020 22:13:12 +0900</lastBuildDate>
     
-	<atom:link href="https://josiahp.github.com/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://josiahp.net/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Rig Improvements, Buttons, Hazards, and Feedback</title>
+      <link>https://josiahp.net/2020/09/rig-improvements-buttons-hazards-and-feedback/</link>
+      <pubDate>Wed, 02 Sep 2020 22:13:12 +0900</pubDate>
+      
+      <guid>https://josiahp.net/2020/09/rig-improvements-buttons-hazards-and-feedback/</guid>
+      <description>I&amp;rsquo;ve improved the rig and added several new features.</description>
+    </item>
+    
+    <item>
       <title>Sculpting and Button Blocks</title>
-      <link>https://josiahp.github.com/2020/08/sculpting-and-button-blocks/</link>
+      <link>https://josiahp.net/2020/08/sculpting-and-button-blocks/</link>
       <pubDate>Sat, 29 Aug 2020 23:27:56 +0900</pubDate>
       
-      <guid>https://josiahp.github.com/2020/08/sculpting-and-button-blocks/</guid>
+      <guid>https://josiahp.net/2020/08/sculpting-and-button-blocks/</guid>
       <description>Sculpting practice and a simple model with animation</description>
     </item>
     
     <item>
       <title>Solving My Animation Blending Woes</title>
-      <link>https://josiahp.github.com/2020/08/solving-my-animation-blending-woes/</link>
+      <link>https://josiahp.net/2020/08/solving-my-animation-blending-woes/</link>
       <pubDate>Sat, 29 Aug 2020 00:13:45 +0900</pubDate>
       
-      <guid>https://josiahp.github.com/2020/08/solving-my-animation-blending-woes/</guid>
+      <guid>https://josiahp.net/2020/08/solving-my-animation-blending-woes/</guid>
       <description>Bug squashing and animation tweaks, plus a custom collider!</description>
     </item>
     
     <item>
       <title>Speeding Things Up</title>
-      <link>https://josiahp.github.com/2020/08/speeding-things-up/</link>
+      <link>https://josiahp.net/2020/08/speeding-things-up/</link>
       <pubDate>Thu, 27 Aug 2020 23:23:20 +0900</pubDate>
       
-      <guid>https://josiahp.github.com/2020/08/speeding-things-up/</guid>
+      <guid>https://josiahp.net/2020/08/speeding-things-up/</guid>
       <description>Making some quicker animations and prototyping new meshes</description>
     </item>
     
     <item>
       <title>Spawning Items From Inventory on Actor Death</title>
-      <link>https://josiahp.github.com/2020/08/spawning-items-from-inventory-on-actor-death/</link>
+      <link>https://josiahp.net/2020/08/spawning-items-from-inventory-on-actor-death/</link>
       <pubDate>Wed, 26 Aug 2020 21:50:48 +0900</pubDate>
       
-      <guid>https://josiahp.github.com/2020/08/spawning-items-from-inventory-on-actor-death/</guid>
+      <guid>https://josiahp.net/2020/08/spawning-items-from-inventory-on-actor-death/</guid>
       <description>Adding functionality to the simple inventory system</description>
     </item>
     
     <item>
       <title>Creating a Simple Inventory System</title>
-      <link>https://josiahp.github.com/2020/08/creating-a-simple-inventory-system/</link>
+      <link>https://josiahp.net/2020/08/creating-a-simple-inventory-system/</link>
       <pubDate>Mon, 24 Aug 2020 23:43:49 +0900</pubDate>
       
-      <guid>https://josiahp.github.com/2020/08/creating-a-simple-inventory-system/</guid>
+      <guid>https://josiahp.net/2020/08/creating-a-simple-inventory-system/</guid>
       <description>A brief introduction to a very simple Inventory implementation</description>
     </item>
     
     <item>
       <title>Animating the Door</title>
-      <link>https://josiahp.github.com/2020/08/animating-the-door/</link>
+      <link>https://josiahp.net/2020/08/animating-the-door/</link>
       <pubDate>Sun, 23 Aug 2020 23:34:21 +0900</pubDate>
       
-      <guid>https://josiahp.github.com/2020/08/animating-the-door/</guid>
+      <guid>https://josiahp.net/2020/08/animating-the-door/</guid>
       <description>Created a simple door animation</description>
     </item>
     
     <item>
       <title>Ragdoll Physics and a Door</title>
-      <link>https://josiahp.github.com/2020/08/ragdoll-physics-and-a-door/</link>
+      <link>https://josiahp.net/2020/08/ragdoll-physics-and-a-door/</link>
       <pubDate>Sat, 22 Aug 2020 23:05:58 +0900</pubDate>
       
-      <guid>https://josiahp.github.com/2020/08/ragdoll-physics-and-a-door/</guid>
+      <guid>https://josiahp.net/2020/08/ragdoll-physics-and-a-door/</guid>
       <description>Struggling with ragdoll physics and adding a simple door</description>
     </item>
     
     <item>
       <title>Collision and Timeline Events</title>
-      <link>https://josiahp.github.com/2020/08/collision-and-timeline-events/</link>
+      <link>https://josiahp.net/2020/08/collision-and-timeline-events/</link>
       <pubDate>Fri, 21 Aug 2020 23:50:14 +0900</pubDate>
       
-      <guid>https://josiahp.github.com/2020/08/collision-and-timeline-events/</guid>
+      <guid>https://josiahp.net/2020/08/collision-and-timeline-events/</guid>
       <description>Today I implemented simple weapon collision, health bar display, and enemy death</description>
     </item>
     
     <item>
       <title>Animation and Blueprinting</title>
-      <link>https://josiahp.github.com/2020/08/animation-and-blueprinting/</link>
+      <link>https://josiahp.net/2020/08/animation-and-blueprinting/</link>
       <pubDate>Fri, 21 Aug 2020 00:18:00 +0900</pubDate>
       
-      <guid>https://josiahp.github.com/2020/08/animation-and-blueprinting/</guid>
+      <guid>https://josiahp.net/2020/08/animation-and-blueprinting/</guid>
       <description>Today I animated the simple monster (with horrible weight painting).</description>
     </item>
     
     <item>
       <title>Simple Monster Mockup</title>
-      <link>https://josiahp.github.com/2020/08/simple-monster-mockup/</link>
+      <link>https://josiahp.net/2020/08/simple-monster-mockup/</link>
       <pubDate>Wed, 19 Aug 2020 23:50:59 +0900</pubDate>
       
-      <guid>https://josiahp.github.com/2020/08/simple-monster-mockup/</guid>
+      <guid>https://josiahp.net/2020/08/simple-monster-mockup/</guid>
       <description>Today I modeled a very simple monster (with horrible topology).</description>
     </item>
     
