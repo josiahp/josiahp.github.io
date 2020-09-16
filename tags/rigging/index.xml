@@ -6,10 +6,19 @@
     <description>Recent content in rigging on Josiah Purtlebaugh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 02 Sep 2020 22:13:12 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2020 23:50:42 +0900</lastBuildDate>
     
 	<atom:link href="https://josiahp.net/tags/rigging/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Animation Improvements</title>
+      <link>https://josiahp.net/2020/09/animation-improvements/</link>
+      <pubDate>Wed, 16 Sep 2020 23:50:42 +0900</pubDate>
+      
+      <guid>https://josiahp.net/2020/09/animation-improvements/</guid>
+      <description>I&amp;rsquo;ve improved the rig and added several new features.</description>
+    </item>
     
     <item>
       <title>Rig Improvements, Buttons, Hazards, and Feedback</title>
