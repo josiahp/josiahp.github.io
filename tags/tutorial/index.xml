@@ -6,11 +6,7 @@
     <description>Recent content in tutorial on Josiah Purtlebaugh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Aug 2020 23:43:49 +0900</lastBuildDate>
-    
-	<atom:link href="https://josiahp.net/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 24 Aug 2020 23:43:49 +0900</lastBuildDate><atom:link href="https://josiahp.net/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Creating a Simple Inventory System</title>
       <link>https://josiahp.net/2020/08/creating-a-simple-inventory-system/</link>

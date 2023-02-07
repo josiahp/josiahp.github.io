@@ -5,10 +5,6 @@
     <link>https://josiahp.net/categories/</link>
     <description>Recent content in Categories on Josiah Purtlebaugh</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://josiahp.net/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="https://josiahp.net/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
