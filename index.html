@@ -76,7 +76,6 @@
 
         div#skills {
             padding: 0.1cm 0.25cm;
-
         }
 
         div#skills span.skill {
@@ -136,7 +135,19 @@
         @media only screen and (max-width: 990px) {
 
             html {
-                font-size: 12pt;
+                font-size: 11pt;
+            }
+
+            h1 {
+                font-size: 15pt;
+            }
+
+            h2 {
+                font-size: 14pt;
+            }
+
+            h3 {
+                font-size: 14pt;
             }
 
             /* For mobile phones: */
@@ -150,6 +161,11 @@
 
             ul#contact li:after {
                 content: none;
+            }
+
+            div#skills span.skill {
+                display: block;
+                width: auto;
             }
 
             div#skills ul {
@@ -170,8 +186,20 @@
                 size: A4;
             }
 
-            ul#contact {
-                font-size: 11pt;
+            html {
+                font-size: 10.5pt;
+            }
+
+            h1 {
+                font-size: 15pt;
+            }
+
+            h2 {
+                font-size: 14pt;
+            }
+
+            h3 {
+                font-size: 14pt;
             }
         }
     </style>
@@ -230,8 +258,7 @@
                 <li>Terraform</li>
                 <li>CDK for Terraform</li>
             </ul><br />
-            <span class="skill">Implementation</span>
-
+            <span class="skill">Development</span>
             <ul>
                 <li>Go</li>
                 <li>gRPC</li>
@@ -253,6 +280,10 @@
             <span class="work-period">March 2015 to present</span>
             <ul>
                 <li>
+                    Lead a team of SREs to implement best practices for modern system design with a focus on automation,
+                    infrastructure as code, and observability.
+                </li>
+                <li>
                     Design and deploy services on GKE and AWS ECS using custom Go-based tooling, Terraform, and
                     Helm.
                 </li>
@@ -263,8 +294,16 @@
                     Automate CI/CD, end-to-end testing with proprietary hardware, and performance testing environments
                     using Jenkins, TeamCity, and GitHub Actions.
                 </li>
-                <li>Use AWS CloudFront and Lambda@Edge to deploy robust caching mechanisms with token authentication at
-                    each edge in order to scale NodeJS services deployed on AWS ECS.</li>
+                <li>
+                    Leverage AWS CloudFront and Lambda@Edge to deploy robust caching mechanisms with token
+                    authentication at
+                    each edge in order to scale NodeJS services deployed on AWS ECS.
+                </li>
+                <li>
+                    Collaborate directly with public cloud vendors to evaluate beta services and provide feedback that
+                    drives
+                    the specification for those services.
+                </li>
             </ul>
             <h5>System Engineer</h5>
             <span class="company">Nintendo of America, Inc.</span>
@@ -273,13 +312,29 @@
                 <li>
                     Automate deployments and develop tooling to support Nintendo's on-device software delivery platform.
                 </li>
+                <li>
+                    Implemented custom rules and software on F5 network appliances to handle special cases for SSL/TLS
+                    negotiation and routing for specific software titles.
+                </li>
+                <li>
+                    Modernized bespoke environments by implementing infrastructure as code using tools such as Puppet
+                    and Chef.
+                </li>
             </ul>
-            <h5>Operations Technician</h5>
+            <h5>Applications Engineer</h5>
             <span class="company">The Cobalt Group</span>
             <span class="work-period">December 2006 to July 2011</span>
             <ul>
                 <li>
-                    Used Perl to develop internal tools for monitoring and managed production deployments.
+                    Administrated Weblogic, Apache Tomcat, Strongmail, Qmail, Sendmail and in-house software instances
+                    in an Oracle Linux environment.
+                </li>
+                <li>
+                    Designed and implemented fault-tolerant infrastructure for delivery of millions of email messages to
+                    opt-in consumers on behalf of our clients.
+                </li>
+                <li>
+                    Participated in Agile and Scrum workflows with regular stand-ups and sprint-planning.
                 </li>
             </ul>
         </div>
